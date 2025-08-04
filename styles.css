@@ -312,7 +312,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding: 40px;
-    margin-top: 300px;
+    margin-top: 30px;
 }
 
 /* Skills containers - technical and professional */
@@ -328,7 +328,7 @@ body {
 
 /* Section heading with decorative underline */
 .heading {
-    text-align: center;
+    text-align: left;
     color: #1231bb;
     text-decoration: underline;
     text-decoration-line: solid;
@@ -488,7 +488,7 @@ body {
 .radius {
     width: 100%;
     justify-content: space-evenly;
-    display: inline-flex;
+    display: block;
     height: 170px;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -918,14 +918,14 @@ form button {
     border: none;
     border-radius: 5px;
     color: #0b0c0b;
-    background-color: rgb(171, 171, 130);
+    background-color: rgb(60, 211, 211);
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 form button:hover {
     background-color: rgb(36, 135, 135);
-    color: rgb(0, 0, 0);
+    color: rgb(244, 238, 238);
 }
 
 /* Contact section accent styles */
@@ -1094,7 +1094,11 @@ footer {
 
     /* Adjust body padding to account for smaller header */
     body {
-        padding-top:50%;
+        padding-top: 50%;
+    }
+
+    .education_section {
+        padding-top: 20%;
     }
 
     /* Stack skills sections vertically */
@@ -1109,7 +1113,7 @@ footer {
     .container1 {
         width: 100%;
         max-width: 90%;
-        padding: 200px 60px;
+        padding: 60px 60px;
         margin: 0 auto;
     }
 
@@ -1148,7 +1152,7 @@ footer {
         right: -8px;
     }
 
-     .experience-item {
+    .experience-item {
         padding: 15px 20px;
     }
 
@@ -1156,4 +1160,3 @@ footer {
         font-size: 1.1rem;
     }
 }
-
