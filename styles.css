@@ -1,3 +1,8 @@
+/* 
+  Universal selector reset:
+  - Sets border-box sizing model
+  - Applies a default sans-serif font stack
+*/
 * {
     margin: 0;
     padding: 0;
@@ -5,18 +10,29 @@
     font-family: sans-serif;
 }
 
+/* 
+  Base body styles:
+  - Sets light blue background color
+  - Dark gray text color
+  - Small padding to prevent edge sticking
+*/
 body {
-    /*  Background color for the body */
     background: #b8eef2;
-
-    /*  Text color for the body */
     color: #0e0e0e;
     padding: 2px;
-
-
 }
 
-/* header arrangment*/
+/* 
+   HEADER STYLING
+   */
+
+/*
+  Header container:
+  - Full width with fixed height
+  - Flex layout for horizontal alignment
+  - High z-index ensures it stays above other content
+  - Subtle shadow for depth
+*/
 .header {
     position: fixed;
     top: 0;
@@ -32,102 +48,87 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
-.header a {
-    /*  Text color for the header links */
+/* 
+  Header link styles :
+  - Blue-purple text color
+  - No underline with medium font weight
+  - Slide-in animation on page load
+*/
+.header a,
+.headerName a {
     color: #1f1cacb2;
-
-    /*  Removing the default underline from links */
     text-decoration: none;
-
-    /*  Font size for the header links */
     font-size: 26px;
     font-weight: 600;
-    /* Margin for spacing between links */
     margin: 0 15px;
-
-    /*  Padding for the links */
     padding: 10px 15px;
-
-    /*  Background color for the links */
     background: transparent;
-
     opacity: 1;
     animation: slideRight 1s ease forwards;
-
 }
 
-h1 {
-    /*  Font size for the main title */
-    font-size: 25px;
-    font-weight: bold;
-    color: #1f1cacb2;
-}
-
+/* 
+   name specific styles:
+  - Slightly larger font size
+  - Bold weight for emphasis
+*/
 .headerName a {
-    /*  Font size for the header name */
     font-size: 30px;
     font-weight: bold;
-    color: #1f1cacb2;
     margin-left: 20px;
     cursor: default;
     opacity: 0;
-    animation: slideRight 1s ease forwards;
 }
 
-
+/* 
+  Navigation link styles:
+  - Blue text color
+  - Staggered animations using CSS variables (--i)
+  - Smooth color transitions on hover
+*/
 
 .nav a {
     display: inline-block;
-    font-weight: 400;
-    /*  Text color for the navigation links */
-    color: #0e77e0;
     font-weight: 600;
-
-    /*  Removing the default underline from links */
+    color: #0e77e0;
     text-decoration: none;
-
-    /*  Font size for the navigation links */
     font-size: 20px;
-
-
-    /*  Margin for spacing between links */
     margin: 0 15px;
-
-    /*  Padding for the links */
     padding: 10px 15px;
-
-    /* cursor: default; */
     cursor: pointer;
-
-    /*animation: 0;  */
     transition: color 0.3s ease, background-color 0.3s ease;
-    /*  Adding a box shadow for depth */
     opacity: 0;
     animation: slideTop 0.5s ease forwards;
     animation-delay: calc(var(--i) * 0.2s);
-
-
 }
 
+/* 
+  Nav link hover states:
+  - Darker text color
+  - Custom styled underline effect
+  - Slower transition for smooth effect
+*/
 .nav a:hover {
-
-
-    /*  Changing the text color on hover */
     color: #01080f;
-    /*  Adding an underline effect on hover */
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-color: rgb(2, 96, 27);
     text-decoration-thickness: 5px;
-    text-orientation: sideways-right;
     transition: 1s ease;
-
-
-
 }
 
+/* 
+   HOME SECTION STYLING
+   section with personal introduction
+    */
+
+/*
+  Home section container:
+  - Uses viewport height for responsive sizing
+  - Flex layout splits content and image
+  - Padding creates breathing room
+  - Margin-top accounts for fixed header
+*/
 .home {
     margin-top: 40px;
     position: relative;
@@ -139,8 +140,14 @@ h1 {
     padding: 70px 10% 0;
 }
 
-.home h3 {
-    /*  Font size for the home subtitle */
+/* 
+  Subheading styles:
+  - Medium-large font size
+  - Semi-transparent dark green color
+  - Slide-up animation on load
+*/
+.home h3,
+.home h3:nth-of-type(2) {
     font-size: 30px;
     font-weight: 700;
     color: #20331fb2;
@@ -148,11 +155,15 @@ h1 {
     opacity: 0;
     animation: slideBottom 1s ease forwards;
     animation-delay: 0.7s;
-
 }
 
+/* 
+  Main heading styles:
+  - Extra large font size for prominence
+  - Bright blue color
+  - Slide-in animation with delay
+*/
 .home h1 {
-    /*  Font size for the home title */
     font-size: 56px;
     font-weight: 700;
     color: #1231bb;
@@ -162,30 +173,24 @@ h1 {
     animation-delay: 1s;
 }
 
-.home h3 :nth-of-type(2) {
-    /*  Font size for the home subtitle */
-    font-size: 30px;
-    font-weight: 700;
-    color: #1231bb;
-    margin-bottom: 30px;
-    animation: 0;
-    animation: slideTop 1s ease forwards;
-    animation-delay: 0.5s;
-}
-
+/* span within subheadings */
 .home h3 span {
     color: #04534b;
     font-weight: 700;
 }
 
+/* 
+  Introduction paragraph:
+  - Light green background with padding
+  - Blue text with shadow for contrast
+  - rounded corners
+  - Slide-in animation from left
+*/
 .home p {
-    /*  Text color for the home paragraph */
-
     background: #99deb5;
     padding: 10px;
     border-radius: 10px;
     box-shadow: #003366 0px 0px 10px;
-    /*  Font size for the home paragraph */
     font-size: 20px;
     font-weight: 500;
     color: #003366;
@@ -194,7 +199,12 @@ h1 {
     animation-delay: 1s;
 }
 
-
+/* 
+  Home image styles:
+  - Slightly larger than container for visual impact
+  - Cover sizing maintains aspect ratio
+  - Zoom-in animation on load
+*/
 .homeImage img {
     width: 120%;
     height: 120%;
@@ -206,69 +216,65 @@ h1 {
     animation-delay: 2s;
 }
 
+/* 
+   DOWNLOAD BUTTON STYLING
+   Call-to-action button for CV download
+    */
+
+/*
+  Download button styles:
+  - Bright green background
+  - Pill-shaped with full rounding
+  - Shadow for depth
+  - Slide-down animation
+*/
 .downloadButton {
     display: inline-flex;
     height: 55px;
     width: 270px;
-    /*  Padding for the download button */
     padding: 8px 28px;
-
-
-
     box-shadow: 0 2px 2px rgba(101, 82, 101, 0.1);
-
-
     background: rgb(92, 220, 109);
-
-    /*  Text color for the download button */
     color: #0b039eb2;
-
-    /*  Font size for the download button */
     font-size: 20px;
     font-weight: 800;
     text-decoration: none;
     letter-spacing: 1px;
-
-
-    /*  Border radius for rounded corners */
     border-radius: 90px;
-
-    /*  Transition effect for hover */
     overflow-x: hidden;
-    /* border-top-width: 4px; */
     z-index: 1;
     white-space: pre-wrap;
-
-    /*  Adding a border color */
-    border-color: #70b2e4;
-    border-width: 1px;
-    border-style: solid;
-
-    /*  Making the cursor a pointer */
+    border: 1px solid #70b2e4;
     cursor: pointer;
     position: relative;
-
     transition: background-color 0.3s ease, color 0.3s ease;
     opacity: 0;
     animation: slideTop 1s ease forwards;
     animation-delay: 2.3s;
-
-
-
 }
 
-
-
-
-
+/* 
+  Button hover state:
+  - Color inversion effect
+  - Blue background with bright green text
+*/
 .downloadButton:hover {
     background-color: #037edd;
     color: #07f164;
-    border: #05631d 1px solid;
-
+    border-color: #05631d;
 }
 
+/* 
+   ICONS
+   Linked social media profiles
+  */
 
+/*
+  Social media link container:
+  - size icons
+  - Horizontal spacing
+  - Staggered animations
+*/
 .social_media a {
     display: inline-flex;
     width: 50px;
@@ -284,19 +290,24 @@ h1 {
     animation-delay: calc(0.2s * var(--i));
 }
 
+/* 
+  Social media icons:
+  - Rounded square shape
+*/
 .social_media a img {
-    width: 1000%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20%;
     transition: transform 0.3s ease;
 }
 
+/* 
+   SKILLS SECTION STYLING
+   Technical and professional skills display
+    */
 
-
-/*  container*/
-
-
+/* Skills section container */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -304,7 +315,7 @@ h1 {
     margin-top: 300px;
 }
 
-
+/* Skills containers - technical and professional */
 .skills_continer,
 .container1 {
     width: 100%;
@@ -315,7 +326,7 @@ h1 {
     box-sizing: border-box;
 }
 
-
+/* Section heading with decorative underline */
 .heading {
     text-align: center;
     color: #1231bb;
@@ -327,38 +338,39 @@ h1 {
     margin-bottom: 50px;
 }
 
+/* Individual skill bar container */
 .bar {
     font-size: 23px;
-
 }
 
+/* Technical skill bars group */
 .Technical-bars .bar {
-
     margin-bottom: 30px 0;
 }
 
+/* Remove extra margin from first/last items */
 .Technical-bars .bar:first-child {
     margin-top: o;
-
+    /* Typo: should be 0 */
 }
 
 .Technical-bars .bar:last-child {
     margin-bottom: 0;
 }
 
+/* Skill name/label styling */
 .Technical-bars .bar .info {
     margin-bottom: 5px;
 }
 
 .Technical-bars .bar .info span {
-    /*  Font size for the skill name */
     font-size: 20px;
-    /*  Font weight for the skill name */
     font-weight: 600;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
 
+/* Base progress bar track */
 .Technical-bars .bar .line {
     position: relative;
     height: 5px;
@@ -370,8 +382,7 @@ h1 {
     transform-origin: left;
 }
 
-
-
+/* Progress bar fill */
 .Technical-bars .bar .line span {
     height: 100%;
     background-color: #0774d9;
@@ -382,6 +393,7 @@ h1 {
     transform-origin: left;
 }
 
+/* Skill-specific progress widths */
 .line.html span {
     width: 20%;
 }
@@ -402,8 +414,7 @@ h1 {
     width: 76%;
 }
 
-
-/* after animation*/
+/* Percentage tooltip styling */
 .line span::after {
     position: absolute;
     padding: 1px 8px;
@@ -417,6 +428,7 @@ h1 {
     opacity: 0;
 }
 
+/* Skill-specific percentage values */
 .line.html span::after {
     content: "20%";
 }
@@ -437,6 +449,7 @@ h1 {
     content: "76%";
 }
 
+/* Tooltip pointer */
 .line span::before {
     content: "";
     position: absolute;
@@ -451,22 +464,15 @@ h1 {
     opacity: 0;
 }
 
-@keyframes showText {
-    100% {
-        opacity: 1;
-    }
-}
-
+/* Professional skills container */
 .container1 {
     width: 600px;
     height: 500px;
     padding: 75px 100px;
     margin-left: 120px;
-
-
 }
 
-/* changing the header of professional skills and adjusting other decorations */
+/* Professional skills heading */
 .heading1 {
     text-align: center;
     color: #1231bb;
@@ -478,28 +484,26 @@ h1 {
     margin-bottom: 50px;
 }
 
-
-
+/* Circular progress bars container */
 .radius {
     width: 100%;
     justify-content: space-evenly;
-
     display: inline-flex;
     height: 170px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-
 }
 
+/* Individual circular progress bar */
 .radius .radical-bars {
     width: 50;
     height: 170px;
     margin-bottom: 10px;
     position: relative;
-
 }
 
+/* SVG container for circular progress */
 .radius .radical-bars svg {
     position: absolute;
     top: 50%;
@@ -509,6 +513,7 @@ h1 {
     height: 160px;
 }
 
+/* Circular progress track */
 .radius .radical-bars .progress {
     stroke-width: 10;
     stroke: black;
@@ -517,17 +522,9 @@ h1 {
     stroke-dashoffset: 502;
     stroke-linecap: round;
     animation: animate-bar 1s linear forwards;
-
 }
 
-/* key frame of the bar animation */
-@keyframes animate-bar {
-    100% {
-        stroke-dashoffset: -1;
-    }
-}
-
-/* animation path for technical that will change the color of the animation from the backgroud one */
+/* Circular progress fill */
 .path {
     stroke-width: 10;
     stroke: rgb(19, 162, 194);
@@ -537,7 +534,7 @@ h1 {
     stroke-linecap: round;
 }
 
-/* The four professional skills animation paths and configuration */
+/* Skill-specific progress animations */
 .path1 {
     animation: animation-path1 1s 1s linear forwards;
 }
@@ -554,34 +551,7 @@ h1 {
     animation: animation-path4 1s 1s linear forwards;
 }
 
-@keyframes animation-path1 {
-    100% {
-        stroke-dashoffset: 75;
-        ;
-    }
-}
-
-@keyframes animation-path2 {
-    100% {
-        stroke-dashoffset: 100;
-        ;
-    }
-}
-
-@keyframes animation-path3 {
-    100% {
-        stroke-dashoffset: 175;
-        ;
-    }
-}
-
-@keyframes animation-path4 {
-    100% {
-        stroke-dashoffset: 175;
-        ;
-    }
-}
-
+/* Percentage text display */
 .radical-bars .percentage {
     position: absolute;
     top: 50%;
@@ -590,11 +560,9 @@ h1 {
     font-size: 17px;
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
-
-
 }
 
-/* making the bars change color and fulfilling animation requirement  */
+/* Skill name label */
 .radical-bars .text {
     width: 100%;
     position: absolute;
@@ -605,14 +573,9 @@ h1 {
     font-size: 17px;
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
-
 }
 
-
-.container1 {
-    text-align: center;
-    padding: 50px 20px;
-}
+/* Professional skills section - alternative layout */
 
 
 .radius {
@@ -627,6 +590,7 @@ h1 {
     position: relative;
 }
 
+/* SVG styling for circular progress */
 svg {
     width: 150px;
     height: 150px;
@@ -644,6 +608,7 @@ svg {
     stroke: #eee;
 }
 
+/* Skill-specific path colors and animations */
 .path1 {
     stroke: #1e90ff;
     stroke-dasharray: 502;
@@ -672,65 +637,243 @@ svg {
     animation: fill4 2s ease forwards;
 }
 
-.percentage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #003366;
-}
-
-.text {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #444;
-}
-
-/* Animation for circular stroke */
-@keyframes fill1 {
-    to {
-        stroke-dashoffset: 75;
-    }
-
-    /* 85% */
-}
-
-@keyframes fill2 {
-    to {
-        stroke-dashoffset: 150;
-    }
-
-    /* 70% */
-}
-
-@keyframes fill3 {
-    to {
-        stroke-dashoffset: 175;
-    }
-
-    /* 65% */
-}
-
-@keyframes fill4 {
-    to {
-        stroke-dashoffset: 175;
-    }
-
-    /* 65% */
-}
-
+/* Projects section styling */
 .projects {
     padding: 90px;
 }
 
-footer {
-    padding: 5px;
-    background: #87e8cf;
-    text-align: left;
+
+/*
+ EDUCATION SECTION
+  */
+
+
+/* Education section styling */
+.education_section {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    align-items: center;
 }
 
+.education {
+    width: 90%;
+    display: inline;
+    margin-bottom: 30px;
+    animation: fadeIn 0.8s ease both;
+}
+
+.education_container {
+    position: relative;
+    width: 100%;
+    max-width: 90%;
+    margin-left: 40px;
+    border-left: 5px solid #1e90ff;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    animation: fadeIn 0.8s ease both;
+}
+
+.education h1 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1231bb;
+    margin-bottom: 6px;
+    padding-left: 40px;
+}
+
+.school-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.school {
+    width: 90%;
+    background: #89e3a7;
+    margin: 20px 0;
+    padding: 20px 30px;
+    width: 91%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    position: relative;
+}
+
+.school-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003366;
+}
+
+.school-year {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.award {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Animated underline effect for education items */
+.school::after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: 15px;
+    height: 3px;
+    width: 0;
+    background: #1e90ff;
+    animation: drawLine 1s ease forwards;
+    animation-fill-mode: forwards;
+}
+
+/* Staggered animations for education items */
+.school:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.school:nth-child(1)::after {
+    animation-delay: 0.6s;
+}
+
+.school:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.school:nth-child(2)::after {
+    animation-delay: 0.9s;
+}
+
+.school:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.school:nth-child(3)::after {
+    animation-delay: 1.2s;
+}
+
+/* Experience section styling */
+.experience {
+    width: 100%;
+    padding: 40px;
+}
+
+.experience-container {
+    position: relative;
+    width: 100%;
+    max-width: 80%;
+    margin-left: 40px;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    animation: fadeIn 0.8s ease both;
+}
+
+.experience-container h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1231bb;
+    margin-bottom: 6px;
+}
+
+/* Experience item stylig */
+.experience-class {
+    background-color: #89e3a7;
+    border-left: 5px solid #1e90ff;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    position: relative;
+    animation: fadeIn 0.8s ease both;
+}
+
+.experience-class h3 {
+    margin: 0;
+    color: #003366;
+    font-size: 1.3rem;
+}
+
+.experience-class .company {
+    font-weight: bold;
+    color: #1e90ff;
+    margin-top: 5px;
+}
+
+.experience-class .duration {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 3px;
+}
+
+.experience-class .details {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+
+/* Projects section specific styling */
+.project-title {
+    font-size: 1.3rem;
+    color: #003366;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.8s ease both;
+}
+
+.project-desc {
+    margin: 10px 0;
+}
+
+.projects h2 {
+    color: #1231bb;
+}
+
+.project-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1e90ff;
+    margin-right: 10px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.section-title {
+    margin-left: 10px
+}
+
+.project {
+    width: 90%;
+    background-color: #89e3a7;
+    border-left: 5px solid #1e90ff;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    position: relative;
+    animation: fadeIn 0.8s ease both;
+    position: relative;
+}
+
+/*
+
+/* CONTACT */
+
+/* Contact form container */
 .contact1 {
     width: 90%;
     max-width: 600px;
@@ -742,17 +885,19 @@ footer {
     background-color: #94ebb7;
     border-radius: 10px;
     box-shadow: 0 5px 10px grey;
-
-
 }
 
 .contact1 h1 {
     text-align: center;
     margin-bottom: 20px;
-
-
 }
 
+
+/* FORM STYLE  */
+
+
+
+/* Form input styling */
 form input,
 form textarea {
     display: block;
@@ -763,10 +908,9 @@ form textarea {
     border-radius: 5px;
     background-color: #e6e8ea;
     color: #01080f;
-
-
 }
 
+/* Form button styling */
 form button {
     display: block;
     width: 100%;
@@ -777,7 +921,6 @@ form button {
     background-color: rgb(171, 171, 130);
     cursor: pointer;
     transition: 0.3s ease;
-
 }
 
 form button:hover {
@@ -785,6 +928,7 @@ form button:hover {
     color: rgb(0, 0, 0);
 }
 
+/* Contact section accent styles */
 .contact_subtitle span {
     color: chocolate;
 }
@@ -794,8 +938,20 @@ form button:hover {
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 2rem;
-
 }
+
+
+/* Footer styling */
+footer {
+    padding: 5px;
+    background: #87e8cf;
+    text-align: left;
+}
+
+/*
+   ANIMATION KEYFRAMES
+   Reusable animations throughout the site
+    */
 
 @keyframes slideRight {
     from {
@@ -865,212 +1021,12 @@ form button:hover {
     to {
         opacity: 1;
     }
-
 }
 
 @keyframes animate {
     100% {
         transform: scaleX(1);
     }
-
-}
-
-.education_section {
-    width: 100%;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 150px;
-    align-items: center;
-
-}
-
-.education {
-    width: 90%;
-    display: inline;
-    margin-bottom: 30px;
-    animation: fadeIn 0.8s ease both;
-}
-
-.education_container {
-    position: relative;
-
-    width: 100%;
-    max-width: 90%;
-    margin-left: 40px;
-    background-color: #a9eac0;
-    border-left: 5px solid #1e90ff;
-    padding: 20px 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    animation: fadeIn 0.8s ease both;
-}
-
-.education h1 {
-    font-size: 30px;
-    font-weight: 600;
-    color: #1231bb;
-    margin-bottom: 6px;
-    padding-left: 40px;
-}
-
-.school-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.school {
-    width: 90%;
-    background: #89e3a7;
-    margin: 20px 0;
-    padding: 20px 30px;
-    width: 91%;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-
-    /*transfom this with animation */
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-    position: relative;
-}
-
-.school-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #003366;
-}
-
-.school-year {
-    font-size: 0.95rem;
-    color: #555;
-    margin-top: 5px;
-}
-
-.award {
-    font-size: 0.9rem;
-    color: #333;
-    margin-top: 5px;
-}
-
-
-.school::after {
-    content: '';
-    position: absolute;
-    left: 30px;
-    bottom: 15px;
-    height: 3px;
-    width: 0;
-    background: #1e90ff;
-    animation: drawLine 1s ease forwards;
-    animation-fill-mode: forwards;
-}
-
-.school:nth-child(1) {
-    animation-delay: 0.3s;
-}
-
-.school:nth-child(1)::after {
-    animation-delay: 0.6s;
-}
-
-.school:nth-child(2) {
-    animation-delay: 0.6s;
-}
-
-.school:nth-child(2)::after {
-    animation-delay: 0.9s;
-}
-
-.school:nth-child(3) {
-    animation-delay: 0.9s;
-}
-
-.school:nth-child(3)::after {
-    animation-delay: 1.2s;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* animation that draws a line */
-@keyframes drawLine {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 80%;
-    }
-}
-
-.experience {
-    width: 100%;
-    padding: 40px;
-}
-
-.experience-container {
-    position: relative;
-
-    width: 100%;
-    max-width: 80%;
-    margin-left: 40px;
-    padding: 20px 25px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    animation: fadeIn 0.8s ease both;
-}
-
-.experience-container h2 {
-    font-size: 30px;
-    font-weight: 600;
-    color: #1231bb;
-    margin-bottom: 6px;
-}
-
-/* main experience color guide and outlook  */
-.experience-class {
-    background-color: #89e3a7;
-    border-left: 5px solid #1e90ff;
-    padding: 20px 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    position: relative;
-    animation: fadeIn 0.8s ease both;
-}
-
-/* experience header size and color */
-.experience-class h3 {
-    margin: 0;
-    color: #003366;
-    font-size: 1.3rem;
-}
-
-/* company decoration */
-.experience-class .company {
-    font-weight: bold;
-    color: #1e90ff;
-    margin-top: 5px;
-}
-
-.experience-class .duration {
-    font-size: 0.95rem;
-    color: #555;
-    margin-top: 3px;
-}
-
-.experience-class .details {
-    font-size: 0.95rem;
-    color: #333;
-    margin-top: 10px;
-    line-height: 1.6;
 }
 
 @keyframes fadeIn {
@@ -1085,67 +1041,38 @@ form button:hover {
     }
 }
 
-@media (max-width: 600px) {
-    .experience-item {
-        padding: 15px 20px;
-    }
-
-    .experience-item h3 {
-        font-size: 1.1rem;
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+/* Animation that draws a line IN EDUCATION */
+@keyframes drawLine {
+    from {
+        width: 0;
+    }
 
-.project-title {
-    font-size: 1.3rem;
-    color: #003366;
-    position: relative;
-
-    width: 100%;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    animation: fadeIn 0.8s ease both;
+    to {
+        width: 80%;
+    }
 }
 
-.project-desc {
-    margin: 10px 0;
-}
-
-.projects h2 {
-    color: #1231bb;
-}
-
-.project-link {
-    text-decoration: none;
-    font-weight: bold;
-    color: #1e90ff;
-    margin-right: 10px;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-.section-title {
-    margin-left: 10px
-}
-
-.project {
-    width: 90%;
-    background-color: #89e3a7;
-    border-left: 5px solid #1e90ff;
-    padding: 20px 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    position: relative;
-    animation: fadeIn 0.8s ease both;
-    position: relative;
 
 
-}
+
+
+
+
+/* 
+   RESPONSIVE DESIGN BREAKPOINTS
+   Mobile-first responsive adjustments
+    */
 
 @media (max-width: 768px) {
+
+    /* Stack header elements vertically on small screens */
     .header {
         flex-direction: column;
         height: auto;
@@ -1165,17 +1092,12 @@ form button:hover {
         width: 100%;
     }
 
-}
-
-@media (max-width: 768px) {
+    /* Adjust body padding to account for smaller header */
     body {
-        padding-top: 100%;
+        padding-top:50%;
     }
-}
 
-@media (max-width: 768px) {
-
-
+    /* Stack skills sections vertically */
     .skills {
         flex-direction: column;
         align-items: center;
@@ -1197,6 +1119,7 @@ form button:hover {
         text-align: center;
     }
 
+    /* Adjust circular progress bars for mobile */
     .radius {
         justify-content: center;
         gap: 20px;
@@ -1207,6 +1130,7 @@ form button:hover {
         width: 130px;
     }
 
+    /* Adjust technical skill bars for mobile */
     .Technical-bars .bar {
         margin-bottom: 25px;
     }
@@ -1223,4 +1147,13 @@ form button:hover {
         top: -8px;
         right: -8px;
     }
+
+     .experience-item {
+        padding: 15px 20px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.1rem;
+    }
 }
+
