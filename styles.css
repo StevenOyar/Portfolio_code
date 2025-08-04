@@ -1170,7 +1170,7 @@ form button:hover {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 40%;
+        padding-top: 100%;
     }
 }
 
