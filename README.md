@@ -2,6 +2,9 @@
 PLP portfolio hacketon
 
 
+## view website
+https://stevenoyar.github.io/Portfolio_code/
+
 ## Overview
 A responsive portfolio website showcasing my skills, projects, and professional journey as an aspiring software engineer and data analyst.
 
@@ -33,3 +36,5 @@ LinkedIn: Steven Oyaro
 GitHub: @StevenOyar
 
 Twitter: @CSStevenMO1
+
+
