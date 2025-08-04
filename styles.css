@@ -78,8 +78,7 @@ h1 {
 
 
 
-.nav a,
-nav a :active {
+.nav a {
     display: inline-block;
     font-weight: 400;
     /*  Text color for the navigation links */
@@ -298,7 +297,7 @@ nav a :active {
 /*  container*/
 
 
-.second {
+.skills {
     display: flex;
     flex-wrap: wrap;
     padding: 40px;
@@ -1177,7 +1176,7 @@ form button:hover {
 @media (max-width: 768px) {
 
 
-    .second {
+    .skills {
         flex-direction: column;
         align-items: center;
         margin-top: 0;
